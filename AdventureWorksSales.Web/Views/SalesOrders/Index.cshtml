@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AdventureWorksSales.Web.Models.SalesOrder>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CarrierTrackingNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesOrderDetailID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesOrderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpecialOfferID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPriceDiscount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CarrierTrackingNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SalesOrderDetailID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SalesOrderID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SpecialOfferID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UnitPrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UnitPriceDiscount)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new {  id=item.SalesOrderID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.SalesOrderID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.SalesOrderID })
+    </td>
+</tr>
+}
+
+</table>
